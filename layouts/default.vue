@@ -1,0 +1,27 @@
+<template>
+  <v-app id="gif">
+        <nuxt />
+  </v-app>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+
+    }
+  }
+}
+</script>
+<style scoped>
+  body{
+    overflow: hidden;
+  }
+  #gif{
+    background-image: url("../static/rain.gif");
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+</style>
