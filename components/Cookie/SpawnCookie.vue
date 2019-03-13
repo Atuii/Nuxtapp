@@ -1,22 +1,39 @@
 <template>
-  <button @click="moveCookie()" class="btn btn-circle"></button>
+  <button @mouseenter="mouseEnter()" @mouseleave="mouseLeave()" v-on:keypress.space="moveCookie()" @click="moveCookie()" class="btn btn-circle"></button>
 </template>
 
 <script>
   import Cookiegame from "../../pages/Cookie";
+
     export default {
         name: "SpawnCookie",
         components:{Cookiegame},
         props:{},
+        data(){
+          return{
+            hovering:false,
+
+          }
+        },
         methods:{
           moveCookie:function () {
-            this.$el.style.top = Math.floor(Math.random() * 1000)+'px';
-            console.log(this.$el.style.top)
-            this.$el.style.left = Math.floor(Math.random() * 1900)+'px';
-            var size = (Math.floor(Math.random() * 70)+20)+'px'
-            this.$el.style.width = size;
-            this.$el.style.height = size;
-            this.$emit("cookiepress")
+            if(this.hovering) {
+              let top = Math.floor(Math.random() * window.innerHeight-260)+260;
+              let left = Math.floor(Math.random() * window.innerWidth-130)+130;
+              this.$el.style.top = top+'px';
+              console.log(top + ' ' + left);
+              this.$el.style.left = left+'px';
+              let size = (Math.floor(Math.random() * 70)+40)+'px';
+              this.$el.style.width = size;
+              this.$el.style.height = size;
+              this.$emit("cookiepress");
+            }
+          },
+          mouseEnter: function(){
+            this.hovering = true;
+          },
+          mouseLeave: function () {
+            this.hovering = false;
           }
         }
 
@@ -31,7 +48,7 @@
     left: 50%;
     position: fixed;
     padding: 10px 16px;
-    border-radius: 35px;
+    border-radius: 60px;
     font-size: 24px;
     line-height: 1.33;
     background-color: red;

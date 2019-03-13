@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _22aecaae = () => interopDefault(import('..\\pages\\Cookie.vue' /* webpackChunkName: "pages_Cookie" */))
-const _7c946eec = () => interopDefault(import('..\\pages\\DynamitClicker.vue' /* webpackChunkName: "pages_DynamitClicker" */))
-const _4b1172c4 = () => interopDefault(import('..\\pages\\home.vue' /* webpackChunkName: "pages_home" */))
-const _7da0c685 = () => interopDefault(import('..\\pages\\inspire.vue' /* webpackChunkName: "pages_inspire" */))
-const _6b8cceb2 = () => interopDefault(import('..\\pages\\modalpage.vue' /* webpackChunkName: "pages_modalpage" */))
-const _6fa91035 = () => interopDefault(import('..\\pages\\TabsTest.vue' /* webpackChunkName: "pages_TabsTest" */))
-const _6b5a293d = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _0d69a7e6 = () => interopDefault(import('..\\pages\\Cookie.vue' /* webpackChunkName: "pages_Cookie" */))
+const _5d6848c7 = () => interopDefault(import('..\\pages\\DynamitClicker.vue' /* webpackChunkName: "pages_DynamitClicker" */))
+const _003eab41 = () => interopDefault(import('..\\pages\\home.vue' /* webpackChunkName: "pages_home" */))
+const _370160e8 = () => interopDefault(import('..\\pages\\inspire.vue' /* webpackChunkName: "pages_inspire" */))
+const _a445b36c = () => interopDefault(import('..\\pages\\modalpage.vue' /* webpackChunkName: "pages_modalpage" */))
+const _3b487b9c = () => interopDefault(import('..\\pages\\TabsTest.vue' /* webpackChunkName: "pages_TabsTest" */))
+const _5bd40060 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
 
@@ -86,31 +86,31 @@ export function createRouter() {
 
     routes: [{
       path: "/Cookie",
-      component: _22aecaae,
+      component: _0d69a7e6,
       name: "Cookie"
     }, {
       path: "/DynamitClicker",
-      component: _7c946eec,
+      component: _5d6848c7,
       name: "DynamitClicker"
     }, {
       path: "/home",
-      component: _4b1172c4,
+      component: _003eab41,
       name: "home"
     }, {
       path: "/inspire",
-      component: _7da0c685,
+      component: _370160e8,
       name: "inspire"
     }, {
       path: "/modalpage",
-      component: _6b8cceb2,
+      component: _a445b36c,
       name: "modalpage"
     }, {
       path: "/TabsTest",
-      component: _6fa91035,
+      component: _3b487b9c,
       name: "TabsTest"
     }, {
       path: "/",
-      component: _6b5a293d,
+      component: _5bd40060,
       name: "index"
     }],
 

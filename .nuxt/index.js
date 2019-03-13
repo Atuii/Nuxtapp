@@ -10,8 +10,8 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_nuxticons_38169373 from 'nuxt_plugin_nuxticons_38169373' // Source: ./nuxt-icons.js (mode: 'all')
-import nuxt_plugin_axios_f0e0b216 from 'nuxt_plugin_axios_f0e0b216' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_nuxticons_e3cf6c44 from 'nuxt_plugin_nuxticons_e3cf6c44' // Source: ./nuxt-icons.js (mode: 'all')
+import nuxt_plugin_axios_294a59aa from 'nuxt_plugin_axios_294a59aa' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_vuetify_e5914fcc from 'nuxt_plugin_vuetify_e5914fcc' // Source: ..\\plugins\\vuetify (mode: 'all')
 
 // Component: <NoSsr>
@@ -130,8 +130,8 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_nuxticons_38169373 === 'function') await nuxt_plugin_nuxticons_38169373(app.context, inject)
-  if (typeof nuxt_plugin_axios_f0e0b216 === 'function') await nuxt_plugin_axios_f0e0b216(app.context, inject)
+  if (typeof nuxt_plugin_nuxticons_e3cf6c44 === 'function') await nuxt_plugin_nuxticons_e3cf6c44(app.context, inject)
+  if (typeof nuxt_plugin_axios_294a59aa === 'function') await nuxt_plugin_axios_294a59aa(app.context, inject)
   if (typeof nuxt_plugin_vuetify_e5914fcc === 'function') await nuxt_plugin_vuetify_e5914fcc(app.context, inject)
 
   // If server-side, wait for async component to be resolved first
