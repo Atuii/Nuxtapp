@@ -2,9 +2,11 @@
   <div>
     <button class="start-btn" v-show="isStartShown" @click="startGame()" >Start Game</button>
     <spawncookie v-show="isShown" @cookiepress="addPoint()"></spawncookie>
-    <div class="counter">Click amount: {{counter}} points</div>
+    <div class="counter">
+      <div class="counterText">{{counter}} / 10</div>
+    </div>
     <div class="end" v-show="isEndShown">
-      <div class="endText" v-show="isEndShown">You got : {{points}}</div>
+      <div class="endText" v-show="isEndShown">You got : {{points}} / 30000</div>
       <button @click="restartGame()" class="endBtn" v-show="isEndShown">Retry?</button>
     </div>
   </div>
@@ -14,8 +16,9 @@
   import Spawncookie from "../components/Cookie/SpawnCookie";
   let moment = require("moment");
   moment().format();
+  let timeBetweenClicks;
   let lastClicked;
-  let startTime = moment();
+  let startTime;
     export default {
       name: "Cookie",
       components:{Spawncookie},
@@ -35,16 +38,23 @@
           console.log("deleted");
           this.isStartShown = false;
           this.isShown = true;
+          startTime = moment();
         },
         addPoint: function () {
           let newClick = moment();
-          let timeBetweenClicks = newClick.diff(lastClicked);
+          if(this.counter == 0)
+          {
+            timeBetweenClicks = newClick.diff(startTime);
+          }
+          else
+            timeBetweenClicks = newClick.diff(lastClicked);
           this.counter++;
-          let clickPoints = 2000 - timeBetweenClicks;
+          let clickPoints = 3000 - timeBetweenClicks;
           if(clickPoints < 0)
             clickPoints = 0;
+          console.log(clickPoints)
           this.points += clickPoints;
-          lastClicked = moment();
+          lastClicked = newClick;
           if(this.counter>=10){
             this.isEndShown=true;
             this.isShown=false;
@@ -84,17 +94,21 @@
   .endText{
     position: fixed;
     font-size: 100px;
-    top: 30%;
-    left: 30%;
+    top: 20%;
+    left: 25%;
   }
   .counter{
     width: 100%;
     height: 60px;
+    justify-content: center;
     font-size: 30px;
     font-family: "Comic Sans MS",serif;
     background-color: darkcyan;
     color: #00ff00;
     position: fixed;
+  }
+  .counterText{
+    margin-left: 50%;
   }
   .start-btn {
     width: 200px;

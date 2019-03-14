@@ -14,12 +14,8 @@ export default {
 }
 </script>
 <style scoped>
-  body{
-    overflow: hidden;
-
-  }
   #gif{
-    background-image: url("../static/rain.gif");
+    /*background-image: url("../static/rain.gif");*/
     background-color: cyan;
     -webkit-background-size: cover;
     background-size: cover;

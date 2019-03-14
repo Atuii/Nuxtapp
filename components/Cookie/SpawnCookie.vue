@@ -1,5 +1,5 @@
 <template>
-  <button @mouseenter="mouseEnter()" @mouseleave="mouseLeave()" v-on:keypress.space="moveCookie()" @click="moveCookie()" class="btn btn-circle"></button>
+  <div @mouseenter="mouseEnter()" @mouseleave="mouseLeave()" @click="moveCookie()" class="btn btn-circle"></div>
 </template>
 
 <script>
@@ -18,8 +18,8 @@
         methods:{
           moveCookie:function () {
             if(this.hovering) {
-              let top = Math.floor(Math.random() * window.innerHeight-260)+260;
-              let left = Math.floor(Math.random() * window.innerWidth-130)+130;
+              let top = Math.floor(Math.random() * (window.innerHeight-460))+230;
+              let left = Math.floor(Math.random() * (window.innerWidth-460))+230;
               this.$el.style.top = top+'px';
               console.log(top + ' ' + left);
               this.$el.style.left = left+'px';
@@ -52,6 +52,7 @@
     font-size: 24px;
     line-height: 1.33;
     background-color: red;
+    z-index: 2;
   }
   .btn-circle:focus {outline:0;}
 </style>
