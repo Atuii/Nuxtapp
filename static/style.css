@@ -1,4 +1,4 @@
 html{
   overflow: hidden !important;
-  cursor: url("../static/cursor.png") 20 20, auto;
+  cursor: url("/cursor.png") 20 20, auto;
 }

@@ -8,14 +8,23 @@
     export default {
         name: "SpawnCookie",
         components:{Cookiegame},
-        props:{},
+        props:['KeyboardClick'],
         data(){
           return{
             hovering:false,
 
           }
         },
+        mounted(){
+          setInterval(this.checkForClick,10)
+        },
         methods:{
+          checkForClick:function(){
+            if(this.keyboardClick == true){
+              console.log("lol")
+              this.moveCookie();
+            }
+          },
           moveCookie:function () {
             if(this.hovering) {
               let top = Math.floor(Math.random() * (window.innerHeight-460))+230;

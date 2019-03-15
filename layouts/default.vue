@@ -1,5 +1,5 @@
 <template>
-  <v-app id="gif">
+  <v-app id="gif" @keypress="">
         <nuxt />
   </v-app>
 </template>
@@ -10,13 +10,13 @@ export default {
     return {
 
     }
-  }
+  },
 }
 </script>
 <style scoped>
   #gif{
     /*background-image: url("../static/rain.gif");*/
-    background-color: cyan;
+    background-image: radial-gradient(green,yellow,cyan);
     -webkit-background-size: cover;
     background-size: cover;
     width: 100%;
